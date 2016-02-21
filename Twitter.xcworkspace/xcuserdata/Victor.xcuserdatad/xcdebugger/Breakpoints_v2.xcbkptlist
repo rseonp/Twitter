@@ -9,14 +9,108 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Twitter/AppDelegate.swift"
-            timestampString = "477184992.945001"
+            filePath = "Twitter/TwitterClient.swift"
+            timestampString = "477734485.957448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "application(_:openURL:sourceApplication:annotation:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "TwitterClient"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Twitter.TwitterClient.__deallocating_deinit"
+                  moduleName = "Twitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Victor/Desktop/Developer/CodePath/Twitter/Twitter/TwitterClient.swift"
+                  timestampString = "477364021.401078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Twitter.TwitterClient.init (Twitter.TwitterClient.Type)(baseURL : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSURL&gt;, consumerKey : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, consumerSecret : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Twitter.TwitterClient&gt;"
+                  moduleName = "Twitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Victor/Desktop/Developer/CodePath/Twitter/Twitter/TwitterClient.swift"
+                  timestampString = "477364021.403233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Twitter.TwitterClient.init (Twitter.TwitterClient.Type)(baseURL : Swift.Optional&lt;__ObjC.NSURL&gt;, sessionConfiguration : Swift.Optional&lt;__ObjC.NSURLSessionConfiguration&gt;) -&gt; Twitter.TwitterClient"
+                  moduleName = "Twitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Victor/Desktop/Developer/CodePath/Twitter/Twitter/TwitterClient.swift"
+                  timestampString = "477364021.403397"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Twitter.TwitterClient.init (Twitter.TwitterClient.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Twitter.TwitterClient&gt;"
+                  moduleName = "Twitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Victor/Desktop/Developer/CodePath/Twitter/Twitter/TwitterClient.swift"
+                  timestampString = "477364021.403531"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Twitter/ViewController.swift"
+            timestampString = "477364650.158508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "onLogin(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Twitter/TweetCell.swift"
+            timestampString = "477744111.005148"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "TweetCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
