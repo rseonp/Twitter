@@ -50,27 +50,34 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             return 0
         }
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         
         cell.tweet = tweets[indexPath.row]
         return cell
     }
-    
-   
-    
 
     @IBAction func onLogout(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let tweet = tweets![indexPath!.row]
+//        print(tweet)
+        print("about to create vc")
+        let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
+        print("BOUT TO SET")
+        tweetDetailViewController.tweet = tweet
+        print("Prepare for segue in TweetsViewController")
     }
-    */
+    
 
 }
