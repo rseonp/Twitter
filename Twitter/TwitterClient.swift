@@ -94,4 +94,48 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    func retweet(id_string: String, success: (Tweet) -> (), failure: () -> ()) {
+        POST("1.1/statuses/retweet/\(id_string).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            let dictionary = response as! NSDictionary
+            let tweet = Tweet(dictionary: dictionary)
+            success(tweet)
+            
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure()
+        })
+    }
+    
+    func unretweet(id_string: String, success: (Tweet) -> (), failure: () -> ()) {
+        POST("1.1/statuses/unretweet/\(id_string).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            let dictionary = response as! NSDictionary
+            let tweet = Tweet(dictionary: dictionary)
+            success(tweet)
+            
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure()
+        })
+    }
+    
+    func favorite(id_string: String, success: (Tweet) -> (), failure: (NSError) -> ()) {
+        POST("1.1/favorites/create.json?id=\(id_string)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            let dictionary = response as! NSDictionary
+            let tweet = Tweet(dictionary: dictionary)
+            success(tweet)
+            
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure(error)
+        })
+    }
+    
+    func unfavorite(id_string: String, success: (Tweet) -> (), failure: (NSError) -> ()) {
+        POST("1.1/favorites/destroy.json?id=\(id_string)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            let dictionary = response as! NSDictionary
+            let tweet = Tweet(dictionary: dictionary)
+            success(tweet)
+            
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure(error)
+        })
+    }
+    
 }

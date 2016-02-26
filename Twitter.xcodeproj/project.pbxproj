@@ -13,6 +13,10 @@
 		5779751C1C71323A003C12B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5779751B1C71323A003C12B3 /* Assets.xcassets */; };
 		5779751F1C71323A003C12B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5779751D1C71323A003C12B3 /* LaunchScreen.storyboard */; };
 		5779752A1C7139AE003C12B3 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577975291C7139AE003C12B3 /* TwitterClient.swift */; };
+		579D6B891C7FDD61003BA2C6 /* like-action.png in Resources */ = {isa = PBXBuildFile; fileRef = 579D6B881C7FDD61003BA2C6 /* like-action.png */; };
+		579D6B8D1C7FDD6C003BA2C6 /* like-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 579D6B8A1C7FDD6C003BA2C6 /* like-action-on.png */; };
+		579D6B8E1C7FDD6C003BA2C6 /* retweet-action.png in Resources */ = {isa = PBXBuildFile; fileRef = 579D6B8B1C7FDD6C003BA2C6 /* retweet-action.png */; };
+		579D6B8F1C7FDD6C003BA2C6 /* retweet-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 579D6B8C1C7FDD6C003BA2C6 /* retweet-action-on.png */; };
 		57A9DC281C79C43E00A37BA7 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9DC271C79C43E00A37BA7 /* TweetCell.swift */; };
 		57BC36931C73F64500031163 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC36921C73F64500031163 /* User.swift */; };
 		57BC36951C73F65C00031163 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC36941C73F65C00031163 /* Tweet.swift */; };
@@ -32,6 +36,10 @@
 		5779751E1C71323A003C12B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		577975201C71323A003C12B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577975291C7139AE003C12B3 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		579D6B881C7FDD61003BA2C6 /* like-action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like-action.png"; path = "../../../../like-action.png"; sourceTree = "<group>"; };
+		579D6B8A1C7FDD6C003BA2C6 /* like-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like-action-on.png"; path = "../../../../like-action-on.png"; sourceTree = "<group>"; };
+		579D6B8B1C7FDD6C003BA2C6 /* retweet-action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retweet-action.png"; path = "../../../../retweet-action.png"; sourceTree = "<group>"; };
+		579D6B8C1C7FDD6C003BA2C6 /* retweet-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retweet-action-on.png"; path = "../../../../retweet-action-on.png"; sourceTree = "<group>"; };
 		57A9DC271C79C43E00A37BA7 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		57BC36921C73F64500031163 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		57BC36941C73F65C00031163 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -82,6 +90,10 @@
 				577975141C71323A003C12B3 /* AppDelegate.swift */,
 				577975181C71323A003C12B3 /* Main.storyboard */,
 				5779751B1C71323A003C12B3 /* Assets.xcassets */,
+				579D6B8A1C7FDD6C003BA2C6 /* like-action-on.png */,
+				579D6B8B1C7FDD6C003BA2C6 /* retweet-action.png */,
+				579D6B8C1C7FDD6C003BA2C6 /* retweet-action-on.png */,
+				579D6B881C7FDD61003BA2C6 /* like-action.png */,
 				5779751D1C71323A003C12B3 /* LaunchScreen.storyboard */,
 				577975201C71323A003C12B3 /* Info.plist */,
 			);
@@ -202,9 +214,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				579D6B8E1C7FDD6C003BA2C6 /* retweet-action.png in Resources */,
 				5779751F1C71323A003C12B3 /* LaunchScreen.storyboard in Resources */,
 				5779751C1C71323A003C12B3 /* Assets.xcassets in Resources */,
+				579D6B8F1C7FDD6C003BA2C6 /* retweet-action-on.png in Resources */,
+				579D6B891C7FDD61003BA2C6 /* like-action.png in Resources */,
 				5779751A1C71323A003C12B3 /* Main.storyboard in Resources */,
+				579D6B8D1C7FDD6C003BA2C6 /* like-action-on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

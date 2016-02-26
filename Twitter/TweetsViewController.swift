@@ -9,7 +9,7 @@
 import UIKit
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     var tweets: [Tweet]!
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,13 +22,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension //autolayout
         tableView.estimatedRowHeight = 120
-
+        
         TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
             self.tweets = tweets
-//            for tweet in tweets {
-//                print(tweet.user?.name)
-//                print(tweet.text)
-//            }
+            //            for tweet in tweets {
+            //                print(tweet.user?.name)
+            //                print(tweet.text)
+            //            }
             self.tableView.reloadData()
             //reload table
             
@@ -37,7 +37,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,13 +57,76 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.tweet = tweets[indexPath.row]
         return cell
     }
-
+    
     @IBAction func onLogout(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
     }
     
-    // MARK: - Navigation
+    @IBAction func retweetPressed(sender: AnyObject) {
+        if let button = sender as? UIButton {
+            if let superview = button.superview {
+                if let cell = superview.superview as? TweetCell {
+                    print(cell.tweet.id!)
+                    
+                    if(cell.retweetButton.selected == true) {
+                        TwitterClient.sharedInstance.unretweet(cell.tweet.id!, success: { (tweet: Tweet) -> () in
+                            cell.tweet.retweeted = false
+                            cell.tweet.retweetCount--
+                            self.tableView.reloadData()
+                            print("unretweetPressed success")
+                            }, failure: { () -> () in
+                                print("unretweetPressed failure")
+                        })
+                    } else{
+                        TwitterClient.sharedInstance.retweet(cell.tweet.id!, success: { (tweet: Tweet) -> () in
+                            cell.tweet.retweeted = true
+                            cell.tweet.retweetCount++
+                            self.tableView.reloadData()
+                            print("retweetPressed success")
+                            }, failure: { () -> () in
+                                print("retweetPressed failure")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func favoritePressed(sender: AnyObject) {
+        if let button = sender as? UIButton {
+            if let superview = button.superview {
+                if let cell = superview.superview as? TweetCell {
+                    print(cell.tweet.id!)
+                    
+                    if(cell.favoriteButton.selected == true) {
+                        TwitterClient.sharedInstance.unfavorite(cell.tweet.id!, success: { (tweet: Tweet) -> () in
+                            cell.tweet.favorited = false
+                            cell.tweet.favoritesCount--
+                            self.tableView.reloadData()
+                            print("unfavoritePressed success")
+                            }, failure: { (error: NSError) -> () in
+                                print(error.localizedDescription)
+                                print("unfavoritePressed failure")
+                        })
+                    } else{
+                        TwitterClient.sharedInstance.favorite(cell.tweet.id!, success: { (tweet: Tweet) -> () in
+                            cell.tweet.favorited = true
+                            cell.tweet.favoritesCount++
+                            self.tableView.reloadData()
+                            print("favoritePressed success")
+                            }, failure: { (error: NSError) -> () in
+                                print(error.localizedDescription)
+                                print("favoritePressed failure")
+                        })
+                    }
+                }
+            }
+        }
 
+    }
+    
+    // MARK: - Navigation
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -71,7 +134,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPathForCell(cell)
         let tweet = tweets![indexPath!.row]
-//        print(tweet)
+        //        print(tweet)
         print("about to create vc")
         let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
         print("BOUT TO SET")
@@ -79,5 +142,5 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         print("Prepare for segue in TweetsViewController")
     }
     
-
+    
 }
