@@ -68,7 +68,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
                 if let cell = superview.superview as? TweetCell {
                     print(cell.tweet.id!)
                     
-                    if(cell.retweetButton.selected == true) {
+//                    if(cell.retweetButton.selected == true) {
+                        if(cell.tweet.retweeted == true) {
                         TwitterClient.sharedInstance.unretweet(cell.tweet.id!, success: { (tweet: Tweet) -> () in
                             cell.tweet.retweeted = false
                             cell.tweet.retweetCount--
@@ -98,7 +99,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
                 if let cell = superview.superview as? TweetCell {
                     print(cell.tweet.id!)
                     
-                    if(cell.favoriteButton.selected == true) {
+//                    if(cell.favoriteButton.selected == true) {
+                    if(cell.tweet.favorited == true) {
                         TwitterClient.sharedInstance.unfavorite(cell.tweet.id!, success: { (tweet: Tweet) -> () in
                             cell.tweet.favorited = false
                             cell.tweet.favoritesCount--
@@ -122,8 +124,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         }
-
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+            }) { (error: NSError) -> () in
+                print("Error: \(error.localizedDescription)")
+        }
+    }
+    
     
     // MARK: - Navigation
     
@@ -131,15 +142,20 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPathForCell(cell)
-        let tweet = tweets![indexPath!.row]
-        //        print(tweet)
-        print("about to create vc")
-        let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
-        print("BOUT TO SET")
-        tweetDetailViewController.tweet = tweet
-        print("Prepare for segue in TweetsViewController")
+        if segue.identifier == "tweetSegue" {
+            print("prepare for tweetSegue")
+        } else {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let tweet = tweets![indexPath!.row]
+            //        print(tweet)
+            print("about to create vc")
+            let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
+            print("BOUT TO SET")
+            tweetDetailViewController.tweet = tweet
+            print(tweet.user?.name)
+            print("Prepare for segue in TweetsViewController")
+        }
     }
     
     

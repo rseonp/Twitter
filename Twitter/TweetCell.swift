@@ -39,21 +39,21 @@ class TweetCell: UITableViewCell {
             
             if(tweet.retweeted == true) {
                 retweetButton.setImage(UIImage(named: "retweet-action-on.png"), forState: .Normal)
-                retweetButton.selected = true
+//                retweetButton.selected = true
 //                print("retweetselected = true in TweetCell")
             } else {
                 retweetButton.setImage(UIImage(named: "retweet-action.png"), forState: .Normal)
-                retweetButton.selected = false
+//                retweetButton.selected = false
 //                print("retweetselected = false in TweetCell")
             }
             
             if(tweet.favorited == true) {
                 favoriteButton.setImage(UIImage(named: "like-action-on.png"), forState: .Normal)
-                favoriteButton.selected = true
+//                favoriteButton.selected = true
 //                print("favoriteselected = true in TweetCell")
             } else {
                 favoriteButton.setImage(UIImage(named: "like-action.png"), forState: .Normal)
-                favoriteButton.selected = false
+//                favoriteButton.selected = false
 //                print("favoriteselected = false in TweetCell")
             }
             
