@@ -373,7 +373,7 @@
                                             <constraint firstAttribute="height" constant="30" id="j76-7A-GAG"/>
                                         </constraints>
                                         <connections>
-                                            <action selector="onReply:" destination="Ivi-Yi-ddc" eventType="touchUpInside" id="Iqf-qa-9j1"/>
+                                            <segue destination="znf-Wd-oN5" kind="modal" identifier="replySegue" id="KRz-GZ-rma"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -491,6 +491,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAP-96-lUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="270" y="334"/>
+        </scene>
+        <!--Reply Tweet View Controller-->
+        <scene sceneID="uZT-PT-aXk">
+            <objects>
+                <viewController id="znf-Wd-oN5" customClass="ReplyTweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r7b-ui-ARr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lpq-cH-a8N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YXc-cb-u7V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-gm-fPG">
+                                <rect key="frame" x="265" y="28" width="42" height="30"/>
+                                <state key="normal" title="Tweet"/>
+                                <connections>
+                                    <action selector="onTweet:" destination="znf-Wd-oN5" eventType="touchUpInside" id="hit-IK-c1V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okk-88-rjn">
+                                <rect key="frame" x="20" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="znf-Wd-oN5" eventType="touchUpInside" id="vdM-33-gVt"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This is the reply best tweet ever." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GU1-HL-PzP">
+                                <rect key="frame" x="20" y="92" width="280" height="204"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tweetText" destination="GU1-HL-PzP" id="9A9-rC-hBr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cav-bs-k7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="1012"/>
         </scene>
     </scenes>
 </document>

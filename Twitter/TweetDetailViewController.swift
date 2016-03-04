@@ -133,9 +133,7 @@ class TweetDetailViewController: UIViewController {
         }
     }
 
-    @IBAction func onReply(sender: AnyObject) {
-                print("reply pressed")
-    }
+
     
     
     
@@ -146,11 +144,19 @@ class TweetDetailViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let profileDetailViewController = segue.destinationViewController as! ProfileDetailViewController
-        //        print("BOUT TO SET")
-                profileDetailViewController.tweet = tweet
-                print(tweet.user?.name)
-                print("Prepare for segue in TweetDetailViewController")
+        if(segue.identifier == "replySegue") {
+            let replyTweetViewController = segue.destinationViewController as! ReplyTweetViewController
+            replyTweetViewController.tweet = tweet
+            print(tweet.user?.name)
+            print("prepare for replySegue")
+        } else {
+            
+            let profileDetailViewController = segue.destinationViewController as! ProfileDetailViewController
+            //        print("BOUT TO SET")
+            profileDetailViewController.tweet = tweet
+            print(tweet.user?.name)
+            print("Prepare for segue in TweetDetailViewController")
+        }
     }
     
 

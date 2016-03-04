@@ -46,7 +46,7 @@ limitations under the License.
 
 # Project 5 - *Twitter*
 
-Time spent: **5** hours spent in total
+Time spent: **5.5** hours spent in total
 
 ## User Stories
 
@@ -87,6 +87,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/L9MU20i.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Added reply function. 
+<img src='http://i.imgur.com/dblGssR.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
